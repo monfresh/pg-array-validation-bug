@@ -1,6 +1,8 @@
 class Location < ActiveRecord::Base
   attr_accessible :languages, :emails
 
+  serialize :languages, Array
+
   validate :language_format, :email_format
 
   def language_format
